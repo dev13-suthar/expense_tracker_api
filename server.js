@@ -25,6 +25,8 @@ app.use(cors(corsOptions));
 
 // Routesss;
 
+app.get("/",(req,res)=>res.send("connect"))
+
 app.use('/auth',authRoutes)
 app.use('/transactions',transactionRoutes);
 app.use('/stats',statsRoutes);
