@@ -20,7 +20,11 @@ app.use(helemt.crossOriginResourcePolicy({policy:'cross-origin'}));
 app.use(morgan('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(cors(corsOptions))
+app.use(cors({
+    origin: "https://expense-frontend-5dj3.onrender.com"
+}
+))
+app.options('*', cors())
 
 
 // Routesss;
