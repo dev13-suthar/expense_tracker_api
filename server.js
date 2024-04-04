@@ -8,6 +8,7 @@ import dotenv from "dotenv"
 import authRoutes from "./routes/auth.js"
 import statsRoutes from "./routes/stats.js"
 import transactionRoutes from "./routes/transaction.js"
+import corsOptions from "./configs/Corsoptions.js"
 
 
 // Configs
@@ -19,7 +20,7 @@ app.use(helemt.crossOriginResourcePolicy({policy:'cross-origin'}));
 app.use(morgan('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(cors());
+app.use(cors(corsOptions));
 
 
 // Routesss;
