@@ -22,7 +22,7 @@ export const getUsersAllTransaction = async(req,res)=>{
 export const getRecentExpenses = async(req,res)=>{
     const {userId} = req.params;
     try {
-        const Transactions = await Transaction.find({userId:userId});
+        const Transactions = await Transaction.find({userId:userId,type:'debit'});
         const formattedTransaction = Transactions.sort((a,b)=>b.createdAt-a.createdAt);
         const recentTransactions = formattedTransaction.slice(0,2);
         res.status(200).json(recentTransactions);
